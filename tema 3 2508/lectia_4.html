@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            font-size: 24px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        function show(message) {
+            document.getElementById('container').innerHTML = document.getElementById('container').innerHTML + '<br>' + message;
+        }
+
+        if (2 == '1') {
+            show("1 este egal cu '1'");
+        } else {
+            show('alt mesaj');
+        }
+
+        // afiseaza maximul
+        var firstNumber = 5;
+        var secondNumber = 5;
+
+        if (firstNumber > secondNumber) {
+            show(firstNumber);
+        } else {
+            show(secondNumber);
+        }
+
+        // afiseaza numele descrescator
+        var firstName = 'Alex';
+        var secondName = 'Ioana';
+
+        if (firstName > secondName) {
+            show(firstName);
+            show(secondName);
+        } else {
+            show(secondName + ' - ' + firstName);
+        }
+
+        /*
+        verifica daca un numar este 0, iar daca nu verifica daca este par sau impar
+        */
+        var number = 0;
+
+        if (number == 0) {
+            show(number + ' este zero');
+        } else if (number % 2 == 0) {
+            show(number + ' este par');
+        } else {
+            show(number + ' este impar');
+        }
+
+        var text = "Lorem ipsum";
+        // show(text[0]);
+        // show(text[1]);
+        // show(text[2]);
+        // show(text[3]);
+        // show(text[4]);
+
+        var textLength = text.length;
+        for (var i = 0; i < textLength; i++) {
+            show('Caracterul de pe pozitia ' + (i + 1) + ' este: ' + text[i]);
+        }
+        show('----------');
+        for (var i = textLength - 1; i >= 0; i--) {
+            show('Caracterul de pe pozitia ' + (i + 1) + ' este: ' + text[i]);
+        }
+
+        var number = prompt("Introdu un nr de la 0 la 10");
+        show(number);
+
+    </script>
+</body>
+</html>

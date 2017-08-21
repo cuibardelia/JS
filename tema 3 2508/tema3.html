@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="container">
+       
+    </div>
+
+    <script>
+       
+
+        function show(message) {
+            document.getElementById('container').innerHTML = document.getElementById('container').innerHTML + '<br><br>'+ message;
+        }
+
+        function showInline(message) {
+            document.getElementById('container').innerHTML = document.getElementById('container').innerHTML + message + '   --   ';
+        }
+
+        
+
+        // Problema 1
+        function isVowel(char) {
+            if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u')
+                return true;
+        }
+
+        var vowels = 0;
+        var sentence = "Analizeaza aceasta propozitie";
+        var copy = sentence.toLowerCase(); // Ca eficienta, ce e mai ok: sa ocupam memorie cu o copie sau sa facem mai multe iteratii in functia isVowel si sa comparam si cu vocalele uppercase?
+
+
+        for (var i = 0; i < copy.length; i++) {
+            if (isVowel(copy[i])) {
+                vowels++;
+            }
+        }
+
+        var consonants = sentence.length - vowels; // aceeasi intrebare legata de eficienta :)
+
+        show("1. Propozitia analizata este: '" + sentence + "'");
+        show("Numarul de vocale este " + vowels + " iar numarul de consoane este " + consonants);
+
+
+        //Problema 2
+
+        var text = "011100111";
+        var zeroCounter = 0;
+        var oneCounter = 0;
+
+
+        for (var i = 0; i < text.length; i++)
+            if (text[i] == '0')
+                zeroCounter++;
+            else
+                oneCounter++;
+
+        show("Avem " + zeroCounter + " aparitii ale lui '0' si " + oneCounter + " aparitii ale lui '1' in textul introdus.");
+
+        //Problema 3
+        function isDivisible(myNumber, denominator) {
+            if (myNumber % denominator == 0)
+                return true;
+        }
+
+        for (var i = 1; i <= 100; i++)
+            if (isDivisible(i, 15))
+                showInline("FizzBuzz");
+            else if (isDivisible(i, 3))
+                showInline("Fizz");
+            else if (isDivisible(i, 5))
+                showInline("Buzz");
+            else
+                showInline(i); //Trebuie sa fie o ordine mai logica aici :D
+    </script>
+</body>
+
+</html>
