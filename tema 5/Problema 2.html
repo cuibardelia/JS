@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <p>
+        Scrieti un script care sa gaseasca toate numerele care au suma cifrelor ridicate la puterea 4 egala cu numarul insusi. Numerele
+        sunt cuprinse intre 2 si 10000.
+    </p>
+    <div id="container"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message) {
+            $('#container').html($('#container').html() + '<br>' + message);
+        }
+
+        function getSumOfDigits(number) {
+            var sum = 0;
+            var copyOfNumber = number;
+
+            while (number > 0) {
+                currentDigit = copyOfNumber % 10;
+                show('cifra' + currentDigit);
+                sum += currentDigit ** 4;
+                if (sum > number) {
+                    return 0;
+                }
+                copyOfNumber = Math.floor(copyOfNumber / 10);
+                show('numar = ' + copyOfNumber);
+            }
+
+            return sum;
+        }
+
+        show(getSumOfDigits(123));
+        for (var i = 2; i <= 10000; i++) {
+            if (getSumOfDigits(i) == i) {
+                show(i);
+            }
+        }
+       
+    </script>
+</body>
+
+</html>

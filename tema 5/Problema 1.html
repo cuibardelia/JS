@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <p>
+        Scrieti un script care sa calculeze suma cifrelor numarului egal cu 2 la puterea 69 (m-am maturizat :D).
+    </p>
+    <div id="container"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message)
+        {
+            $('#container').html($('#container').html() + '<br>' + message);
+        } 
+
+        function getSumOfDigits(number)
+        {   
+            var sum = 0;
+
+            while(number > 0) {
+                currentDigit = number % 10;
+                show('cifra' + currentDigit);
+               // number = Math.floor(number/10);
+               number = Math.floor(number/10);
+               show('numar = ' + number);
+            }
+            //show('numar final ' + number%10);
+            return sum;
+        }       
+      
+        var number = 2**69;    
+        var firstHalf = Math.floor(number / 10000000000);
+        var secondHalf = number % 10000000000;
+        var sum = getSumOfDigits(number);
+        show(firstHalf);
+        show(secondHalf);
+        
+        show('2^69 = ' + number);
+        show('Suma cifrelor =  ' + sum);
+      
+    </script>
+</body>
+</html>
