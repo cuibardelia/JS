@@ -20,25 +20,22 @@
             $('#container').html($('#container').html() + '<br>' + message);
         }
 
-        function getSumOfDigits(number) {
+        function getSumOfDigits(number)
+        {   
             var sum = 0;
-            var copyOfNumber = number;
+            stringNumber = number.toString();
+            length = stringNumber.length;
 
-            while (number > 0) {
-                currentDigit = copyOfNumber % 10;
-                show('cifra' + currentDigit);
-                sum += currentDigit ** 4;
+            for (var i = 0; i < length; i++) {
+                sum += parseInt(stringNumber[i])**4;
                 if (sum > number) {
                     return 0;
                 }
-                copyOfNumber = Math.floor(copyOfNumber / 10);
-                show('numar = ' + copyOfNumber);
             }
 
             return sum;
-        }
+        }       
 
-        show(getSumOfDigits(123));
         for (var i = 2; i <= 10000; i++) {
             if (getSumOfDigits(i) == i) {
                 show(i);
