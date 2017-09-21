@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            font-size: 24px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tema 4</h1>
+    <div id="container"></div>
+    <script>
+        function show(message) {
+            document.getElementById('container').innerHTML = document.getElementById('container').innerHTML + '<br>' + message;
+        }
+
+        var h = prompt("Introdu ora");
+        var m = prompt("Introdu minutele");
+        var s = prompt("Introdu secundele");
+        show(h + ":" + m + ":" + s);
+
+        function incrementTime(h, m, s) {
+            if (s == 60 && m == 60 && h == 24) {
+                h = 0;
+            } else if (s == 60 && m == 60) {
+                m = 0;
+            }
+
+                if (m == 60) {
+                    m = 0;
+                } else {
+                    m++;
+                }
+            } else {
+
+            }
+        }
+
+        incrementTime(h,m,s);
+
+
+        show(h + ":" + m + ":" + s);
+
+
+    </script>
+</body>
+
+</html>
