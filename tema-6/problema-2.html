@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <p>
+        Scrieti un script care sa genereze primele 100 de numere din sirul lui Fibonacci. Sirul incepe cu numerele 1 si 2, iar fiecare dintre numerele urmatoare este egal cu suma precedentelor doua.
+    </p>
+    <div id="container"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message) {
+            $('#container').html($('#container').html() + '---' + message);
+        }
+
+        // Varianta 1 - rezultatele sunt aproximate la numere prea mari
+
+        var temp;
+        var previous = 1;
+        var next = 2;
+
+        for (var i = 1; i <= 100; i++) {
+
+            show(previous);
+            temp = previous + next;
+            previous = next;
+            next = temp;
+            // vreau sa le afisez cate 5 pe linie
+            if (i % 5 == 0) {
+                show('<br>');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

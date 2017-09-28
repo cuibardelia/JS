@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 2 V2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <p>
+        Scrieti un script care sa genereze primele 100 de numere din sirul lui Fibonacci. Sirul incepe cu numerele 1 si 2, iar fiecare dintre numerele urmatoare este egal cu suma precedentelor doua.
+    </p>
+    <div id="container"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message) {
+            $('#container').html($('#container').html() + '---' + message);
+        }
+
+
+        function addJS(a, b)
+        {
+        /* Functie care aduna doua numere in format string cu conditia ca primul dat ca parametru sa aiba o lungime >= decat al doilea [ceea ce convine in situatia de fata :))] */
+
+            //facem suma cifrelor ca la cls. I, luand in calcul si transportul, si concatenam la stringul sum:
+            var sum = '';
+            var carry = 0;
+            var cipherSum;
+
+            lengthA = a.length;
+            lengthB = b.length;
+
+            //mai intai calculam suma cifrelor pentru lungimea 'comuna':
+            commonPartOfA = a.substring(lengthA-lengthB, lengthA);
+
+            for (var i = lengthB-1; i >= 0; i--) {
+
+                cipherSum = parseInt(commonPartOfA[i]) + parseInt(b[i]) + carry;
+                carry = 0;
+
+                if (cipherSum > 9) {
+                    carry = 1;
+                    cipherSum = cipherSum % 10;
+                }
+
+                sum = sum + cipherSum;
+            }
+
+            //apoi transferam ce a mai ramas din a, luand in calcul transportul:
+            if (lengthA > lengthB) {
+
+                for (var i = 0; i < lengthA-lengthB; i++) {
+
+                    cipherSum = parseInt(a[i]) + carry;
+                    carry = 0;
+
+                    if (cipherSum > 9) {
+                        carry = 1;
+                        cipherSum = cipherSum % 10;
+                    }
+
+                    sum = sum + cipherSum;
+                }
+
+            } else if (carry == 1) {
+                sum += '1';
+            }
+
+            // inversam stringul
+            sum = sum.split('').reverse().join('');
+            return sum;
+
+        }
+
+        var temp;
+        var previous = '1';
+        var next = '2';
+
+        for (var i = 1; i <= 100; i++) {
+
+            show(previous);
+
+            temp = addJS(next, previous);
+            previous = next;
+            next = temp;
+
+            if (i % 5 == 0) {
+                show('<br>');
+            }
+        }
+
+        //testam functia, merge
+        var y;
+        y = addJS('14472334024676220', '23416728348467684');
+        console.log(y);
+        y = addJS('8', '5');
+        console.log(y);
+
+
+    </script>
+</body>
+
+</html>
