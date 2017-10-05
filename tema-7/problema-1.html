@@ -8,7 +8,10 @@
 <body>
     <p>
         Declarati si initializati o variabila care sa contina urmatorul text: <br /><br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit! Pellentesque condimentum massa vitae Tempor rutrum. Etiam porttitor blandit nibh et porta... "Aenean suscipit ut diam vel dapibus?" Integer eu erat a lorem vehicula vestibulum!? Nunc ullamcorper arcu sit amet libero faucibus, id Consectetur velit tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus; Mauris purus leo, interdum a suscipit et, ultrices sit amet felis.<br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit! Pellentesque condimentum massa vitae Tempor rutrum. 
+        Etiam porttitor blandit nibh et porta... "Aenean suscipit ut diam vel dapibus?" Integer eu erat a lorem vehicula vestibulum!? 
+        Nunc ullamcorper arcu sit amet libero faucibus, id Consectetur velit tincidunt. 
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus; Mauris purus leo, interdum a suscipit et, ultrices sit amet felis.<br /><br />
         Scrieti un script care sa numere cate cuvinte, cate propozitii si cate cuvinte care incep cu litera mare contine textul.
     </p>
     <div id="container"></div>
@@ -25,8 +28,15 @@
         console.log(text);
         var textDeBunSimt = text.replace(/ +/g, ' ');
         show('Text corectat ' + textDeBunSimt);
+
         var numberOfWords = text.length - text.replace(/ /g, '').length;
         show('Numarul de cuvinte ' + numberOfWords);
+
+        var numberOfSentences = text1.match(/[A-Z]*[A-Za-z,;\"\s]+[.?!;]* /g);
+        console.log(numberOfSentences);
+
+        var numberOfCapitalizedWords = text1.match(/[A-Z][a-z]/g).length;
+        show('Numarul de cuvinte care incep cu litere mari' + numberOfCapitalizedWords);
 
     </script>
 </body>
