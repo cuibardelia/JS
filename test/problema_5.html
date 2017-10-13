@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test :: Problema 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Suma a doua numere in format string</h1>
+                <p>Se dau variabilele:
+                    <pre>var firstNumber = '52987';<br>var secondNumber = '48361';</pre>
+                    Scrieti un script care sa simuleze adunarea celor doua numere fara a le converti la integer. Numerele vor fi tratate ca string. Doar la adunarea cifrelor acestea se vor converti la integer. Presupunem ca cele doua numere au acelasi numar de cifre. Se vor aduna pe rand cifrele de la acelasi index si se va tine cont de transportul de la adunarea cifrelor anterioare. Ca la matematica in a 2-a :-).
+                </p>
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message)
+        {
+            $('#container').html($('#container').html() + '<br>' + message);
+        }
+
+        function reverse(a)
+        {
+            length = a.length;
+            reversedA = '';
+
+            for (var i = length-1; i >= 0; i--) {
+                reversedA += a[i];
+            }
+
+            return reversedA;
+        }
+
+        function addJS(a, b) 
+        {
+            var sum = '';
+            var carry = 0;
+            var cipherSum;
+
+            length = a.length;           
+
+            for (var i = length-1; i >= 0; i--) {
+
+                cipherSum = parseInt(a[i]) + parseInt(b[i]) + carry;
+                carry = 0;
+
+                if (cipherSum > 9) {
+                    carry = 1;
+                    cipherSum = cipherSum % 10;
+                }
+
+                sum = sum + cipherSum;
+            }
+
+            //verificam daca avem transport:
+            if (carry == 1) {
+                sum += '1';
+            }
+
+            // inversam stringul
+            sum = reverse(sum);
+            return sum;
+
+        }
+
+        var firstNumber = '52987';
+        var secondNumber = '48361'
+        var result = addJS(firstNumber, secondNumber);
+        show(result);
+
+    </script>
+</body>
+
+</html>
