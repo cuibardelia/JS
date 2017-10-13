@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test :: Problema 4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Cifra cea mai mica si cea mai mare / Litera cea mai mica si cea mai mare</h1>
+                <p>Declarati si initializati o variabila care sa contina un text format doar din cifre si litere mici (fara alte caractere!). Scrieti un script care sa determine care este cea mai mica cifra, cea mai mare cifra, cea mai mica litera si cea mai mare litera. Incercati sa aflati cele patru caractere, parcurgand doar o data stringul (optional).</p>
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message) {
+            $('#container').html($('#container').html() + '<br>' + message);
+        }
+
+        var text = 'dbnb99ybce17orepeyisi8yilepesb9pt0bmbnb';
+        var length = text.length;
+        var minCipher = false;
+        var maxCipher = false;
+        var minChar = false;
+        var maxChar = false;
+        var n;
+       
+        for (var i = 0; i < length; i++) {
+            n = text[i].charCodeAt(0);
+            //daca stim sigur ca in text avem doar cifre si litere mici nu mai verificam ca n sa fie <= 122 
+           
+            if (n >= 97) {
+                if (!minChar) {
+                    minChar = text[i];
+                    maxChar = text[i];
+                } else if (minChar > text[i]) {
+                    minChar = text[i];
+                } else if (maxChar < text[i]) {
+                    maxChar = text[i];
+                }
+            } if (n <= 57) {
+               if (!minCipher) {
+                   minCipher = text[i];
+                   maxCipher = text[i];
+                } else if (minCipher > text[i]) {
+                    minCipher = text[i];
+                } else if (maxCipher < text[i]) {
+                    maxCipher = text [i];
+                } 
+            }                  
+        }
+        
+        if (!minChar) {
+            show('Nu exista litere in text');
+        } else {
+            show('Cea mai mica litera e ' + minChar);
+            show('Cea mai mare cifra e ' + maxChar);  
+        }
+        if (!minCipher) {
+            show('Nu exista cifre in text');
+        } else {
+            show('Cea mai mica cifra e ' + minCipher);
+            show('Cea mai mare cifra e ' + maxCipher);
+        }
+       
+    </script>
+</body>
+
+</html>
