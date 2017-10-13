@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test :: Problema 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Cauta cuvant!</h1>
+                <p>Scrieti o functie care primeste 3 parametrii: o fraza, un cuvant si un numar N. Fraza poate sa contina ",", ";" sau ghilimele dupa, respectiv in jurul cuvintelor cautate. Aceasta functie trebuie sa verifice daca acel cuvant apare de N ori in fraza. Cuvantul cautat trebuie sa fie intreg, nu parte dintr-un alt cuvant (de ex. daca se cauta cuvantul "asta", nu trebuie luat in calcul si cuvantul "astazi").</p>
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message) {
+            $('#container').html($('#container').html() + '<br>' + message);
+        }
+
+        function checkMatches(phrase, word, n){            
+            var exp = new RegExp('\\b' + word + '\\b', "g");
+            console.dir(exp);
+            var matches = phrase.match(exp);
+            
+            console.dir(matches);
+
+            if (matches.length == n){
+                return true;
+            }  
+            return false;  
+                       
+        }
+
+        var phrase = 'Cautam cuvant., de cate cuvante, in fraza cuvant; cuvant este cuvant cuvantul cautat';      
+        var word = 'cuvant';
+        var number = 4;
+
+        show('Fraza data e "'+ phrase + '"');
+
+        if (checkMatches(phrase, word, number)) {
+            show('OK: Cuvantul ' + word + ' apare de ' + number + ' ori in fraza data');
+        } else {
+            show('NOT OK');
+        }       
+
+    </script>
+</body>
+
+</html>
