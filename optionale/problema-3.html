@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Problema 3</h1>
+                <p>Scrieti un script care sa transforme literele mari in litere mici si cele mici in litere mari dintr-un string. <br />
+                    'AaBbc' ---> 'aAbBC'</p>
+                <div id="container"></div>                
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message)
+        {
+            $('#container').html($('#container').html() + '<br>' + message);
+        }
+        
+       function recapitalizeLetter(char) 
+       {
+           if (char.toUpperCase() == char) {
+                   return char.toLowerCase();
+            }
+            return char.toUpperCase();
+       }
+
+       function formatText(text) 
+       {   
+           newText = '';   
+           length = text.length;  
+
+           for (var i = 0; i < length; i++) {
+               newText += recapitalizeLetter(text[i]);
+           }
+
+           return newText;                   
+       }
+
+       var text = 'Charlie & THE Fox';
+       var result = formatText(text);
+
+       show('Textul initial este "' + text + '"'); 
+       show('Textul prelucrat este "' + result + '"');
+       
+    </script>
+</body>
+</html>
