@@ -8,13 +8,13 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <h1>Problema 4</h1>
                 <p>Scrieti un script care sa converteasca un string in camelcase. <br />
                     'JavaScript Exercises' ---> 'JavaScriptExercises'
                     'JavaScript exercises' ---> 'JavaScriptExercises'
                     'JavaScriptExercises' ---> 'JavaScriptExercises'</p>
-                <div id="container"></div>                
+                <div id="container"></div>
             </div>
         </div>
     </div>
@@ -24,31 +24,43 @@
         {
             $('#container').html($('#container').html() + '<br>' + message);
         }
-        
+
         function formatText(text)
-        {   
-            var newText = '';  
+        {
+            var newText = '';
             var currentWord;
-            var noOfSpaces = text.length - text.replace(/ /g, '').length;;
+            var noOfSpaces = text.length - text.replace(/ /g, '').length + 1;
             var prevSpacePos = 0;
+            var nextSpacePos = 0;
 
             text.trim();
-           
-            console.log(noOfSpaces);
-            
-            for (var i = 0; i <= noOfSpaces; i++) {
-                currentWord = 
-            }
-            
-                              
-       }
 
-       var text = 'Charlie & THE Fox';
+            for (var i = 0; i < noOfSpaces; i++) {
+                nextSpacePos = text.indexOf(' ', prevSpacePos + 1);
+
+                if (nextSpacePos < 0) {
+                    nextSpacePos = text.length;
+                }
+
+                if (prevSpacePos != 0) {
+                    prevSpacePos++;
+                }
+
+                currentWord = text.substring(prevSpacePos,nextSpacePos);
+                newText += currentWord.substring(0, 1).toUpperCase() + currentWord.substring(1);
+
+                prevSpacePos = nextSpacePos;
+            }
+
+            return newText;
+        }
+
+       var text = 'Functie de Facut ceva important';
        var result = formatText(text);
 
-       show('Textul initial este "' + text + '"'); 
+       show('Textul initial este "' + text + '"');
        show('Textul prelucrat este "' + result + '"');
-       
+
     </script>
 </body>
 </html>

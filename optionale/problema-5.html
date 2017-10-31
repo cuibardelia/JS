@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Problema 5</h1>
+                <p>Activati-va pentru cateva minute OCD-ul si formatati scriptul de mai jos :-))). Va rog sa nu folositi niciun tool de autoformatare.</p>
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message)
+        {
+            $('#container').html($('#container').html() + '<br>' + message);
+        }
+        function multiplyChar(char, count)
+        {
+            return char.repeat(count);
+        }
+        var word = 'abcdef';
+        var newWord = '';
+        var count;
+        for (var i = word.length - 1; i >= 0; i--) {
+            count = i % 2 == 0 ? 2 : 3;
+            newWord += multiplyChar(word[i], count);
+        }
+        show('Initial word: ' + word);
+        show('Transformed word: ' + newWord);
+    </script>
+</body>
+
+</html>
