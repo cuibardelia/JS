@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Problema 1</h1>
+                <p>Declarati o variabila si initializati-o cu un array gol. </p>
+                <ol type="a">
+                    <li> Folosind functia .push, adaugati pe rand in array elementele: <br />
+                    'red', 'blue', 'yellow', 'green', 'cyan'. </li>
+                    <li> Afisati in consola valoarea array-ului sub forma unui tabel (vezi console.table()). </li>
+                    <li> Sortati crescator elementele din array si afisati pozitia elementului cu valoarea 'green' din noul array. </li>
+                    <li> Afisati penultimul element din array. </li>
+                    <li> Stergeti ultimul element din array. </li>
+                    <li> Afisati stringul format din concatenarea tuturor elementelor
+                din array separate prin '#'.</li>
+                </ol>
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function show(message)
+        {
+            $('#container').html($('#container').html() + '<br>' + message);
+        }
+    </script>
+    <script src="script-1.js"></script>
+</body>
+</html>
