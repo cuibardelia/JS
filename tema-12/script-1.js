@@ -1,4 +1,5 @@
-console.log('merge');
+//scriptul necesita un refresh, for some reason :-s
+
 var colors = [];
 
 //cerinta a.
