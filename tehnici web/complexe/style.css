@@ -1,10 +1,43 @@
  .main-container {
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     left: 15%;
     right: 15%;
   }
 
-  .buttons-container {
-        padding: 20px;
+  .input-wrapper {
+      background-color: yellow;
+      text-align: center;
+       /* width: 360px;
+       margin: auto; */
+
   }
+
+  .number-forms {
+      width: 80px !important;
+  }
+
+  .button {
+      margin: 10px 10px 5px 10px !important;
+      height: 40px;
+      width: 40px;
+  }
+  .buttons-container {
+    background-color:purple;
+    text-align: center;
+
+  }
+
+  #equation-div {
+
+      height: 30px;
+      margin-bottom: 20px;
+  }
+
+  .fill-gap-space {
+      height: 50px;
+  }
+
+
+
+
