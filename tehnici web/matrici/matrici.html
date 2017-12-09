@@ -3,20 +3,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Problema 1</title>
+    <title>Matrici</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container well">
+        <div class="header sticky-top">
+            <h1 class="page-header text-center"><h1>
+        </div>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h1>Problema 1</h1>
-                <p>Scrieti un script care parcurge un array format doar din numere intregi pozitive si care inlocuieste fiecare element par
-                cu dublul lui si fiecare element impar cu patratul lui. </p>
-
-                <div id="container"></div>
+            <div class="col-md-6 center-content">
+                <h1>MATRICE A</h1>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="number" id="lines-A" class="form-control number-forms" value="1" min="1" max="8"><b>LINII</b>
+                        <input type="number" id="columns-A" class="form-control number-forms" value="1" min="1" max="8"><b>COLOANE</b>
+                    </div>
+                </form>
+                <a href="#" id="fill-matrix-A">Genereaza matrice</a>
+            </div>
+            <div class="col-md-6 center-content">
+                <h1>MATRICE B</h1>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="number" id="lines-B" class="form-control number-forms" value="1" min="1" max="8"><b>LINII</b>
+                        <input type="number" id="columns-B" class="form-control number-forms" value="1" min="1" max="8"><b>COLOANE</b>
+                    </div>
+                </form>
+                <a href="#" id="fill-matrix-B">Genereaza matrice</a>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 buttons-container">
+                <button type="button" class="btn btn-success button" id="plus-btn">+</button>
+                <button type="button" class="btn btn-success button" id="multiply-btn">x</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 center-content">
+                <div id="container-A" />
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-lg-6 col-md-6 center-content">
+                    <div id="container-B" />
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 center-content">
+                <h1>REZULTAT</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 center-content">
+                <div id="container-C" />
+            </div>
+        </div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>

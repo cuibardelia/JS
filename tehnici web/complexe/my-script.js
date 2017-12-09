@@ -1,5 +1,6 @@
 $(function () {
 
+    //INITIALIZARE OBIECTE JQUERY
     var $plusBtn = $("#plus-btn");
     var $subtractBtn = $("#subtract-btn");
     var $multiplyBtn = $("#multiply-btn");
@@ -13,6 +14,28 @@ $(function () {
     var $imaginarySecond = $("#imaginary-second");
 
     var $equationDiv = $('#equation-div');
+    var $resultDiv = $('#result');
+
+
+
+    // FUNCTII MATEMATICE:
+    function addComplexnumbers(a, b) {
+        return [a[0] + b[0], a[1] + b[1]];
+    }
+
+    function subtractComplexnumbers(a, b) {
+        return [a[0] - b[0], a[1] - b[1]];
+    }
+
+    function multiplyComplexnumbers(a, b) {
+        return [a[0] * b[0] - a[1] * b[1], a[0] * b[1] + a[1] * b[0]];
+    }
+
+    // function divideComplexnumbers(a, b) {
+    //     var result = [a[0] * b[0] - a[1] * b[1], a[0] * b[1] + a[1] * b[0]];
+    // }
+
+    //FUNCTII PRELUCRARE DATE:
 
     function getComplexNumber(number)
     {
@@ -53,10 +76,17 @@ $(function () {
 
     }
 
+
+    function show(message) {
+            $('#result').html("REZULTAT: " + message);
+        }
+
+
+    //EVENT HANDLERS:
+
     $showFirstNumberBtn.click(function (e) {
-        var firstNumber = [];
-        firstNumber[0] = $realFirst.val();
-        firstNumber[1] = $imaginaryFirst.val();
+
+        var firstNumber = [$realFirst.val(), $imaginaryFirst.val()];
 
         if (firstNumber[0] == '' || firstNumber[1] == '') {
             $equationDiv.html('Adaugati valori pentru ambele campuri ale numarului!');
@@ -69,9 +99,8 @@ $(function () {
     });
 
     $showSecondNumberBtn.click(function (e) {
-        var secondNumber = [];
-        secondNumber[0] = $realSecond.val();
-        secondNumber[1] = $imaginarySecond.val();
+
+        var secondNumber = [$realSecond.val(), $imaginarySecond.val()];
 
         if (secondNumber[0] == '' || secondNumber[1] == '') {
             $equationDiv.html('Adaugati valori pentru ambele campuri ale numarului!');
@@ -85,6 +114,55 @@ $(function () {
 
     $plusBtn.click(function () {
 
+        var firstNumber = [parseInt($realFirst.val()), parseInt($imaginaryFirst.val())];
+        var secondNumber = [parseInt($realSecond.val()), parseInt($imaginarySecond.val())];
+
+        var result = addComplexnumbers(firstNumber, secondNumber);
+
+        result.toString();
+        var resultAsString = getComplexNumber(result);
+
+        var firstcomplexNumberAsString = getComplexNumber(firstNumber);
+        var secondcomplexNumberAsString = getComplexNumber(secondNumber);
+        $equationDiv.html('(' + firstcomplexNumberAsString + ') + (' + secondcomplexNumberAsString + ')');
+        show(resultAsString);
+
     });
+
+    $subtractBtn.click(function () {
+
+        var firstNumber = [parseInt($realFirst.val()), parseInt($imaginaryFirst.val())];
+        var secondNumber = [parseInt($realSecond.val()), parseInt($imaginarySecond.val())];
+
+        var result = subtractComplexnumbers(firstNumber, secondNumber);
+
+        result.toString();
+        var resultAsString = getComplexNumber(result);
+
+        var firstcomplexNumberAsString = getComplexNumber(firstNumber);
+        var secondcomplexNumberAsString = getComplexNumber(secondNumber);
+        $equationDiv.html('(' + firstcomplexNumberAsString + ') - (' + secondcomplexNumberAsString + ')');
+        show(resultAsString);
+
+    });
+
+    $multiplyBtn.click(function () {
+
+        var firstNumber = [parseInt($realFirst.val()), parseInt($imaginaryFirst.val())];
+        var secondNumber = [parseInt($realSecond.val()), parseInt($imaginarySecond.val())];
+
+        var result = multiplyComplexnumbers(firstNumber, secondNumber);
+
+        result.toString();
+        var resultAsString = getComplexNumber(result);
+
+        var firstcomplexNumberAsString = getComplexNumber(firstNumber);
+        var secondcomplexNumberAsString = getComplexNumber(secondNumber);
+        $equationDiv.html('(' + firstcomplexNumberAsString + ') * (' + secondcomplexNumberAsString + ')');
+        show(resultAsString);
+
+    });
+
+
 
 });
