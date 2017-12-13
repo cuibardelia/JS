@@ -16,7 +16,6 @@ function getX(a, b, c)
     result.push((-b + Math.sqrt(delta)) / (2 * a));
     result.push((-b - Math.sqrt(delta)) / (2 * a));
     return result;
-
 }
 
 
