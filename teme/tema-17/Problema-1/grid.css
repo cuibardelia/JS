@@ -1,0 +1,23 @@
+.container {
+    border: 5px solid rgb(80, 70, 122); 
+    background-color: rgb(115, 175, 108); 
+    height: 650px; 
+    margin-left: 10px;
+    margin-right: 10px;
+    display: grid;   
+    grid-template-columns: repeat(10, 1fr); 
+}
+.container .item {
+    border-right: 1px solid rgb(46, 75, 40);
+    border-bottom: 1px solid rgb(46, 75, 40);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item.large {
+    grid-column: span 2;
+    background-color: rgb(103, 91, 151);
+    color: rgb(226, 213, 213);
+}

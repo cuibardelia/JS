@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100');
+.calculator {
+    width: 240px;
+    height: 420px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px 5px; /*0.5 - opacitate de 50% */
+}
+.calculator .display {
+    height: 120px;
+    padding-top: 4px;
+    background: #202020;
+}
+
+.calculator .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 300px;
+}
+
+.calculator .buttons .button {
+    background: #D2D3D5;    
+    border-right: 1px solid #979799;    
+    border-bottom: 1px solid #979799;    
+    font-family: 'Roboto Mono';    
+    font-size: 28px;    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator .buttons .button.large {
+    grid-column: span 2;
+}

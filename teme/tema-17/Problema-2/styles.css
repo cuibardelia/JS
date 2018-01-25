@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+   
+}
+
+body {
+    background: #222;
+    margin: 50px 100px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+}
+
+h1 {   
+    color: #b7f3ee;   
+}
+
+.calculator {
+    width: 720px;
+    height: 378px;
+    padding: 4px;
+    background: #191a1a;    
+}
+
+.calculator .display {
+    height: 70px;
+    padding-top: 4px;
+    background: #dad6d6;
+    border: 3px solid rgb(34, 32, 32);
+}
+
+.calculator .display input {   
+    width: 100%;
+    padding: 2px;    
+    font-size: 14px;
+    text-align: right;   
+    background: transparent;
+    border: 0px;
+}
+
+.calculator .display .result {   
+    width: 100%;
+    padding: 2px;    
+    font-size: 22px;
+    text-align: right;   
+    background: transparent;
+    border: 0px;
+}
+
+.calculator .regular, .scientific {
+    width: 50%;   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 16.6%; /*blochez inaltimea randurilor*/
+    height: 300px;
+    float: left;
+}
+
+.calculator .scientific {    
+    border-left: 4px solid #191a1a;    
+}
+
+.calculator .button {   
+    border-right: 4px solid #191a1a;
+    border-bottom: 4px solid #191a1a;    
+    color: #fdf4f4;     
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator .scientific .button {
+    background: #292b2b;   
+    font-size: 11px; 
+}
+.calculator .regular .button {
+    background: #797d81;   
+    font-size: 20px; 
+}
+
+.calculator .regular .button.horizontal-expanded {
+    grid-column: span 2;  
+}
+
+.calculator .regular .button.vertical-expanded {
+    background: #679b2b;
+    grid-row: span 2;    
+}
+
+.calculator .regular .button.orange {
+    background: #f88c2a;   
+}
+.calculator .regular .button.blue {
+    background: #49b0b8;   
+}
+
+.calculator .regular .button.smaller-font {   
+    font-size: 14px;    
+} 
