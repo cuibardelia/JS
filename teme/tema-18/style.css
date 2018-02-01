@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;   
+}
+
+body {    
+    margin: 100px;
+    background: #F7EAD0;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+}
+
+.display {
+    /* size and positioning*/
+    width: 50%;
+    height: 300px;
+    padding: 30px;    
+    margin: 0 auto;
+    margin-bottom: 30px;
+    /* color styling */
+    background-color: #2E3843;
+    color: #F7EAD0;
+    /* border-radius */
+    border-radius: 16px 16px 16px 16px;
+    -moz-border-radius: 16px 16px 16px 16px;
+    -webkit-border-radius: 16px 16px 16px 16px;
+    /* box-shadow */
+    -webkit-box-shadow: 13px 15px 30px -1px rgba(183,160,122,1);
+    -moz-box-shadow: 13px 15px 30px -1px rgba(183,160,122,1);
+    box-shadow: 13px 15px 30px -1px rgba(183,160,122,1);
+    border: 5px groove #F7EAD0;
+    /* content styling */
+    /* add new line where current word won't fit */
+    word-break: break-all;
+    overflow: auto;
+}
+
+.keyboard {
+    /* size and positioning*/
+    width: 70%;
+    margin: 0 auto;
+    /* grid stuff */
+    display: grid;   
+    grid-template-columns: repeat(10, 1fr);     
+    /* box-shadow */
+    -webkit-box-shadow: 13px 15px 30px -1px rgba(183,160,122,1);
+-moz-box-shadow: 13px 15px 30px -1px rgba(183,160,122,1);
+box-shadow: 13px 15px 30px -1px rgba(183,160,122,1);
+    border: 2px ridge #F7EAD0;
+}
+
+.keyboard .key {
+    /* color styling */
+    background-color: #9B7A73;
+    border-right: 2px ridge #81625C;
+    border-bottom: 2px ridge #81625C;    
+    color: #FFF9ED;     
+    cursor: pointer;    
+    /* content styling */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard .key.large {
+    grid-column: span 2;
+}
+
+.dialog {
+    width: 50%;
+    height: 300px;
+    padding: 30px;    
+    margin: 40px auto;
+    text-align: center;
+    color: #B7A07A;    
+}
