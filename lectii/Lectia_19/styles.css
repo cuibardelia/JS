@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: rgb(198, 223, 231);
+}
+
+.container {
+    margin: 100px auto 0 auto;
+    width: 75vw;
+    height: 75vh;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.display {
+    position: relative;
+    background: #ECF160;
+}
+
+.square {
+    height: 100px;
+    width: 100px;
+    background:#0B5C80;
+    top: 100px;
+    left: 100px;
+    position: absolute;
+    border: 2px dotted #ECF160;
+}
+
+.controler {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+.buttons {
+    height: 180px;
+    width: 180px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.button {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.up, .left, .right, .down {
+    background-color: #257698;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #00000044;
+    cursor: pointer;
+}
+
+/* click + ctrl apoi home apoi ctrl -> */
+.up:hover,
+.left:hover,
+.right:hover,
+.down:hover {
+    background: #0B5C80;
+}

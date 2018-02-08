@@ -3,7 +3,7 @@
     width: 75%;
     height: 500px;
     display: grid;
-    /* grid-template-columns: repeat(3, 30px) 100px; 
+    /* grid-template-columns: repeat(3, 30px) 100px;
        grid-template-columns: 30px 1fr 2fr 50px 100px;
     */
     grid-template-columns: repeat(5, 1fr); /*fr -free space*/
@@ -11,7 +11,7 @@
 .container .item {
     border: 1px solid #0F0;
     padding: 12px;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
 }

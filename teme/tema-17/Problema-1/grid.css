@@ -1,17 +1,17 @@
 .container {
-    border: 5px solid rgb(80, 70, 122); 
-    background-color: rgb(115, 175, 108); 
-    height: 650px; 
+    border: 5px solid rgb(80, 70, 122);
+    background-color: rgb(115, 175, 108);
+    height: 650px;
     margin-left: 10px;
     margin-right: 10px;
-    display: grid;   
-    grid-template-columns: repeat(10, 1fr); 
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
 }
 .container .item {
     border-right: 1px solid rgb(46, 75, 40);
     border-bottom: 1px solid rgb(46, 75, 40);
     font-size: 1.3rem;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
 }

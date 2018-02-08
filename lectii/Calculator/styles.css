@@ -18,13 +18,13 @@
 }
 
 .calculator .buttons .button {
-    background: #D2D3D5;    
-    border-right: 1px solid #979799;    
-    border-bottom: 1px solid #979799;    
-    font-family: 'Roboto Mono';    
-    font-size: 28px;    
+    background: #D2D3D5;
+    border-right: 1px solid #979799;
+    border-bottom: 1px solid #979799;
+    font-family: 'Roboto Mono';
+    font-size: 28px;
     cursor: pointer;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
 }
