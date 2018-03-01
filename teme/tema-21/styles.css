@@ -1,18 +1,17 @@
-
-/* * {
+/*
+* {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 } */
 
 body {
-    background: rgb(109, 84, 84);
     font-family: 'Coiny', cursive;
 }
 
 .container {
     margin: 100px auto 0 auto;
-    border: 1px solid #bada55;
+    /* background-color: #E4E4E2; */
     display: grid;
     width: 600px;
     height: 400px;
@@ -20,9 +19,7 @@ body {
 }
 
 .display {
-    border: 5px solid #e44d07;
     position: relative;
-
 }
 
 .buttons {
@@ -32,7 +29,6 @@ body {
 }
 
 .position, .color, .size {
-    border: 5px solid #079ee4;
     display: grid;
     align-items: center;
     justify-items: center;
