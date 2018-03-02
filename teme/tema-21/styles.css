@@ -1,12 +1,20 @@
-/*
+
 * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-} */
+}
 
 body {
     font-family: 'Coiny', cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
 }
 
 .container {
@@ -20,6 +28,7 @@ body {
 
 .display {
     position: relative;
+    border: 1px solid yellow;
 }
 
 .buttons {
@@ -34,18 +43,10 @@ body {
     justify-items: center;
 }
 
-.item {
-    height: 100px;
-    width: 100px;
+i {
     position: absolute;
     top: 150px;
     left: 150px;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-}
-
-.item i {
     color: #d2dab8;
     font-size: 50px;
     text-shadow: 4px 4px 10px #00000044;
