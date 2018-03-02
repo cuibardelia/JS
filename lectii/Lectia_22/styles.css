@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme+Expanded');
+@import url('https://fonts.googleapis.com/css?family=Seymour+One');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: #e4eeef;
+}
+
+h1 {
+    font-family: 'Seymour One';
+    color: rgb(243, 241, 96);
+    text-align: center;
+    text-shadow: 2px 2px 2px #00000088;
+    font-size: 4vw;
+}
+
+h2 {
+    font-family: 'Oswald';
+    font-size: 3vw;
+    color: #999;
+}
+
+.container {
+    width: 95%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    background: #afb7c3;
+    overflow: hidden;
+}
+
+.one,
+.two {
+    padding: 10px;
+    text-align: center;
+}
+
+.score {
+    font-family: 'BioRhyme Expanded';
+    font-size: 6vw;
+    color: #999;
+}
+
+.active .score {
+    color: #666;
+    text-shadow: 2px 2px 2px #bada55;
+}
+
+.active h2 {
+    color: #a709d3;
+    text-shadow: 2px 2px 2px #666;
+}
+
+.board-container {
+    overflow: hidden;
+    box-shadow: 0px 0px 10px #00000044;
+    -moz-box-shadow: 0px 0px 10px #00000044;
+    -webkit-box-shadow: 0px 0px 10px #00000044;
+    background: #c4c4c4;
+}
+
+.board {
+    padding: 20px;
+    width: 100%;
+    height: 75vh;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.board .cards {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #999;
+    -moz-box-shadow: 0px 0px 10px #999;
+    -webkit-box-shadow: 0px 0px 10px #999;
+}
+
+.board .cards:not(.on) {
+    background: linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+    linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+    background-size: 100px 100px;
+    background-color: #EC173A;
+}
+
+.board .cards i {
+    display: none;
+}
+
+.board .cards.on {
+    background: #bada5588;
+}
+
+.board .cards.on i {
+    font-size: calc(30vw / var(--cols-number));
+    color: #ffffff88;
+    text-shadow: 4px 4px 4px #00000044;
+    display: block;
+}
+
+.board .cards.removed {
+    visibility: hidden;
+}
