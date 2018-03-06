@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Lobster');
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;  
+    
+}
+
+body {
+    background-color: #8F745E;
+    font-family: 'Abel', sans-serif;  
+}
+
 .container {
     margin-top: 100px;
     height: 65vh;
     width: 65vw;
-    border: 1px solid mediumseagreen;
+    padding: 10px;    
+   -webkit-box-shadow: 28px 22px 63px -9px rgba(28,26,28,1);
+    -moz-box-shadow: 28px 22px 63px -9px rgba(28,26,28,1);
+    box-shadow: 28px 22px 63px -9px rgba(28,26,28,1);
+    background-color: #D3DC73;
     margin: 100px auto;
     display: grid;
     grid-template-rows: 1fr 4fr;
+}
+
+p {
+    position: absolute;
+    margin: 0;
+    font-family: Lobster, cursive;;
 }
 
 .interact {
@@ -17,21 +41,24 @@
 form {
     margin: 2.5rem;
 }
+
 input {
     width: 100px;
-    height: 40px;
+    height: 60px;
 }
+
 input[type="text"] {
     font-size: 2rem;
 }
 
 input[type="button"] {
-    padding: 0;
-    border: none;
-    margin: none;
-    font-size: 1rem;
+    padding: 0;    
+    font-size: 1.5rem;
 }
 
-.display {
-    border: 1px solid red;
+.display {    
+    padding: 5px;
+    position: relative;
+    background-color: #AA9079;
+    margin: 0 20px 20px 20px;
 }
