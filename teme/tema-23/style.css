@@ -1,0 +1,37 @@
+.container {
+    margin-top: 100px;
+    height: 65vh;
+    width: 65vw;
+    border: 1px solid mediumseagreen;
+    margin: 100px auto;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.interact {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+form {
+    margin: 2.5rem;
+}
+input {
+    width: 100px;
+    height: 40px;
+}
+input[type="text"] {
+    font-size: 2rem;
+}
+
+input[type="button"] {
+    padding: 0;
+    border: none;
+    margin: none;
+    font-size: 1rem;
+}
+
+.display {
+    border: 1px solid red;
+}
